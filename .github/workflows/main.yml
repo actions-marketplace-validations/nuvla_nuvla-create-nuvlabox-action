@@ -10,10 +10,10 @@ jobs:
         uses: actions/nuvla-create-nuvlabox-action@v1
         with:
           api-key: 'mykey'
-	  api-secret: 'mysecret'
-	  vpn-server-id: 'vpnid'
-  	  nuvlabox-release: 'nuvlabox-release/uuid'
-	  name: "name"
+          api-secret: 'mysecret'
+          vpn-server-id: 'vpnid'
+          nuvlabox-release: 'nuvlabox-release/uuid'
+          name: "name"
       # Use the output 
       - name: Get the output 
         run: echo "The output was ${{ steps.Tester.outputs.nuvlabox-id }}"
