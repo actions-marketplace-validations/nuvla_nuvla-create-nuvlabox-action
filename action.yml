@@ -1,0 +1,43 @@
+# action.yml
+name: 'Nuvla NuvlaBox Resource Creator'
+description: 'Create a new NuvlaBox resource in Nuvla.io'
+inputs:
+  api-key:  # user api key for login
+    description: 'Nuvla.io User API Key'
+    required: true
+  api-secret: # user api secret for login
+    description: 'Nuvla.io User API Secret'
+    required: true
+  vpn-server-id: # id of the VPN server infrastructure in Nuvla.io to be used 
+    description: 'ID of the VPN infrastructure service for the NuvlaBox'
+    required: true
+    default: 'infrastructure-service/eb8e09c2-8387-4f6d-86a4-ff5ddf3d07d7'
+  nuvlabox-release: # version of the NB to be created
+    description: 'ID of the nuvlabox-release to be used'
+    required: true
+  name: # name of the NuvlaBox resource 
+    description: 'Name of for the NuvlaBox resource'
+    required: true
+  description:  # optional description for the NuvlaBox resource 
+    description: 'Description for the NuvlaBox resource'
+    required: true
+    default: 'NuvlaBox created from a GitHub action'
+outputs:
+  nuvlabox-id: # id of output
+    description: 'ID of the new NuvlaBox resource in Nuvla.io'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - --api-key
+    - ${{ inputs.api-key }}
+    - --api-secret
+    - ${{ inputs.api-secret }}
+    - --vpn-server-id
+    - ${{ inputs.vpn-server-id }}
+    - --nuvlabox-release
+    - ${{ inputs.nuvlabox-release }}
+    - --name
+    - ${{ inputs.name }}
+    - --description
+    - ${{ inputs.description }}
