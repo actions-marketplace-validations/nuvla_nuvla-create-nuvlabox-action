@@ -56,7 +56,7 @@ def create_nuvlabox_body(name, description, vpn_server_id, major_version, body=N
         body = {
             "name": name,
             "description": description,
-            "version": major_version,
+            "version": int(major_version),
             "vpn-server-id": vpn_server_id
         }
 
