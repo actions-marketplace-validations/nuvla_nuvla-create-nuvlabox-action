@@ -52,4 +52,4 @@ if __name__ == '__main__':
     args = init()
     
     print(dir(args))
-    print("::set-output name=nuvlabox-id::1")
+    print("::set-output name=NUVLABOX_UUID::1")

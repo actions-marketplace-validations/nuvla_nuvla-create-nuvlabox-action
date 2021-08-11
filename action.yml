@@ -23,7 +23,7 @@ inputs:
     required: true
     default: 'NuvlaBox created from a GitHub action'
 outputs:
-  nuvlabox-id: # id of output
+  NUVLABOX_UUID: # id of output
     description: 'ID of the new NuvlaBox resource in Nuvla.io'
 runs:
   using: 'docker'
