@@ -52,4 +52,5 @@ if __name__ == '__main__':
     args = init()
     
     print(dir(args))
+    print(args.name)
     print("::set-output name=NUVLABOX_UUID::1")
