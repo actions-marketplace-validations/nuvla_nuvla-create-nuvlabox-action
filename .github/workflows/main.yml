@@ -1,18 +1,18 @@
-# on: [push]
+on: [push]
 
-# jobs:
-#   test_job:
-#     runs-on: ubuntu-latest
-#     name: A job to test the action
-#     steps:
-#       - name: Tester
-#         id: test
-#         uses: nuvla/nuvla-create-nuvlabox-action@v0
-#         with:
-#           api-key: ${{ secrets.API_KEY }}
-#           api-secret: ${{ secrets.API_SECRET }}
-#           nuvlabox-release: 'nuvlabox-release/a26b3ef0-1d66-464c-9ad0-b96be025444c'
-#           name: "Mock NBE for test"
-#       # Use the output
-#       - name: Get the output
-#         run: echo "The output was ${{ steps.test.outputs.NUVLABOX_UUID }}"
+jobs:
+  test_job:
+    runs-on: ubuntu-latest
+    name: A job to test the action
+    steps:
+      # - name: Tester
+      #   id: test
+      #   uses: nuvla/nuvla-create-nuvlabox-action@v0
+      #   with:
+      #     api-key: ${{ secrets.API_KEY }}
+      #     api-secret: ${{ secrets.API_SECRET }}
+      #     nuvlabox-release: 'nuvlabox-release/a26b3ef0-1d66-464c-9ad0-b96be025444c'
+      #     name: "Mock NBE for test"
+      # Use the output
+      - name: Get the output
+        run: echo "The output was ${{ steps.test.outputs.NUVLABOX_UUID }}"
