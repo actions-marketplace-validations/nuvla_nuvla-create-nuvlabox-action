@@ -16,4 +16,4 @@ jobs:
           name: "name"
       # Use the output 
       - name: Get the output 
-        run: echo "The output was ${{ steps.test.outputs.nuvlabox-id }}"
+        run: echo "The output was ${{ steps.test.outputs.NUVLABOX_UUID }}"
