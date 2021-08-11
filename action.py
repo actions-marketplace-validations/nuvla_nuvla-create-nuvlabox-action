@@ -32,8 +32,7 @@ def init():
     parser.add_argument('--nuvlabox-release',
                         dest='nuvlabox_release',
                         metavar='NUVLABOX_RELEASE',
-                        help='ID of the nuvlabox-release to be used',
-                        required=True)
+                        help='ID of the nuvlabox-release to be used')
     parser.add_argument('--name',
                         dest='name',
                         metavar='NAME',
@@ -47,7 +46,6 @@ def init():
                         required=True)
 
     return parser.parse_args()
-
 
 
 def create_nuvlabox_body(name, description, vpn_server_id, major_version, body=None):
@@ -70,9 +68,14 @@ if __name__ == '__main__':
 
     api.login_apikey(args.api_key, args.api_secret)
 
-    nuvlabox_release = api.get(args.nuvlabox_release).data
+    if not args.nuvlabox_release:
+        nuvlabox_release = api.get('nuvlabox-release',
+                                    filter="created:desc",
+                                    last=1).data['resources'][0]['release']
+    else:
+        nuvlabox_release = api.get(args.nuvlabox_release).data['release']
 
-    major_version = nuvlabox_release['release'].split('.')[0]
+    major_version = nuvlabox_release.split('.')[0]
 
     new_nb = api.add('nuvlabox',
                      data=create_nuvlabox_body(
