@@ -6,4 +6,4 @@ COPY . .
 
 RUN pip install -r requirements.txt
 
-ENTRYPOINT [ "/action.py" ]
+ENTRYPOINT [ "/opt/action.py" ]
