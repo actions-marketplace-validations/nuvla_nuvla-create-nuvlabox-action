@@ -7,7 +7,7 @@ jobs:
     steps:
       - name: Tester
         id: test
-        uses: actions/nuvla-create-nuvlabox-action@v0
+        uses: nuvla/nuvla-create-nuvlabox-action@v0
         with:
           api-key: 'mykey'
           api-secret: 'mysecret'
