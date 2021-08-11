@@ -70,7 +70,7 @@ if __name__ == '__main__':
 
     if not args.nuvlabox_release:
         nuvlabox_release = api.get('nuvlabox-release',
-                                    orderby="created:desc')"
+                                    orderby="created:desc')",
                                     last=1).data['resources'][0]['release']
     else:
         nuvlabox_release = api.get(args.nuvlabox_release).data['release']
