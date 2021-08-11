@@ -69,9 +69,9 @@ if __name__ == '__main__':
     api.login_apikey(args.api_key, args.api_secret)
 
     if not args.nuvlabox_release:
-        nuvlabox_release = api.get('nuvlabox-release',
+        nuvlabox_release = api.search('nuvlabox-release',
                                     orderby="created:desc')",
-                                    last=1).data['resources'][0]['release']
+                                    last=1).resources[0].data['release']
     else:
         nuvlabox_release = api.get(args.nuvlabox_release).data['release']
 
