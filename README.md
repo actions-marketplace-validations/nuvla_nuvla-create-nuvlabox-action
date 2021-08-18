@@ -14,7 +14,7 @@ jobs:
     steps:
       - name: creator
         id: nuvlabox
-        uses: nuvla/nuvla-create-nuvlabox-action@v1
+        uses: nuvla/nuvla-create-nuvlabox-action@v2
         with:
           api-key: ${{ secrets.API_KEY }}
           api-secret: ${{ secrets.API_SECRET }}
